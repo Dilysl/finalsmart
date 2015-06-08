@@ -23,11 +23,13 @@
 <%= render 'form' %><br>
 
 <p>	
-	<h2> Savings status </h2><br>
+	<h2> Savings </h2><br>
 
 	<% @records.each do |record| %>
 		Saved: ZAR <%= record.amount %><br>
-		On: <%= record.date %><br>
+		On: <%= record.date %><br><br>
 	<% end %>
 </p>
+
+
 
