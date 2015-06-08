@@ -1,15 +1,33 @@
-<%= link_to 'New Goal', new_user_goal_path(current_user) %>
-<%= link_to 'Home', :root %>
+<h1> The personal savings page of <%= @user.email %> </h1>
 
-<% @goals.each do |goal| %>
+<button><%= link_to 'Home', :root %></button>
+<button><%= link_to 'New Goal', new_user_goal_path(current_user) %></button>
+
 <p>
-Goal reached by : <%= goal.date %><br>
-Goal amount : ZAR <%= goal.amount %><br>
-Goal : <%= goal.description %><br>
-<strong><%= link_to 'Edit this Goal', edit_user_goal_path(current_user, goal) %></strong>
-<% end %>
-<% @goals.each do |goal| %>
- <% @sum += goal.amount %>
-<% end %>
-Total Goal amount : ZAR <%= @sum %>
+	<h2> Goals </h2><br>
+	<% @goals.each do |goal| %>
+		Goal reached by : <%= goal.date %><br>
+		Goal amount : ZAR <%= goal.amount %><br>
+		Goal : <%= goal.description %><br>
+		<strong><%= link_to 'View this Goal', user_goal_path(current_user, goal) %></strong><br>
+	<% end %>
+
+	<% @goals.each do |goal| %>
+		<% @sum += goal.amount %>
+	<% end %>
+
+	Total Goal amount : <strong>ZAR <%= @sum %></strong>
 </p>
+
+<h3> New Saving </h3>
+<%= render 'form' %><br>
+
+<p>	
+	<h2> Savings status </h2><br>
+
+	<% @records.each do |record| %>
+		Saved: ZAR <%= record.amount %><br>
+		On: <%= record.date %><br>
+	<% end %>
+</p>
+

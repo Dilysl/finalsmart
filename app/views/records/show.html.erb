@@ -1,4 +1,12 @@
-# <h1> Your Saving </h1>
+<h1> Your Saving </h1>
+
+<p>
+I saved: <%= @record.amount %><br>
+On: <%= @record.date %><br>
+About this saving: <%= @record.description %><br>
+</p>
+
+<%= link_to 'My page', user_records_path(current_user, @record) %>
 
 
 
