@@ -1,0 +1,31 @@
+<%= form_for (new_user_goal_path) do |f| %> 
+
+<% if @goal.errors.any? %>
+		<h2>
+			<%= pluralize(@goal.errors.count, "error")%>
+			prohibited this place from being saved
+		</h2>
+		<ul>
+			<% @goal.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<p>
+	<%= f.label :date %>
+	<%= f.text_field :date %>
+	</p>
+	<p>
+		<%= f.label :amount %>
+		<%= f.text_field :amount %>
+	</p>
+	<p>
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

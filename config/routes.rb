@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users 
 
+  resources :info
+
     resources :user do
       resources :records, :goals
     end
