@@ -4,13 +4,13 @@ class WelcomeController < ApplicationController
 
   def show
   end
-<<<<<<< HEAD
 
   def edit
-=======
+
   def new
   end
+ 
   def create
->>>>>>> refs/remotes/Smartsaver/master
   end
+
 end
