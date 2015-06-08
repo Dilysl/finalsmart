@@ -1,2 +1,15 @@
 <%= link_to 'New Goal', new_user_goal_path(current_user) %>
 <%= link_to 'Home', :root %>
+
+<% @goals.each do |goal| %>
+<p>
+Goal reached by : <%= goal.date %><br>
+Goal amount : ZAR <%= goal.amount %><br>
+Goal : <%= goal.description %><br>
+<strong><%= link_to 'Edit this Goal', edit_user_goal_path(current_user, goal) %></strong>
+<% end %>
+<% @goals.each do |goal| %>
+ <% @sum += goal.amount %>
+<% end %>
+Total Goal amount : ZAR <%= @sum %>
+</p>
