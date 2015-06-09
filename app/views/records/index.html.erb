@@ -1,14 +1,34 @@
-<h1> My Goals </h1>
 
-Goal<br><br>
+<h1> The personal savings page of <%= @user.email %> </h1>
 
-Goal <br><br>
+<button><%= link_to 'Home', :root %></button>
+<button><%= link_to 'New Goal', new_user_goal_path(current_user) %></button>
 
+<p>
+	<h2> Goals </h2><br>
+	<% @goals.each do |goal| %>
+		Goal reached by : <%= goal.date %><br>
+		Goal amount : ZAR <%= goal.amount %><br>
+		Goal : <%= goal.description %><br>
+		<strong><%= link_to 'View this Goal', user_goal_path(current_user, goal) %></strong><br>
+	<% end %>
 
-<h1> My Records </h1>
+	<% @goals.each do |goal| %>
+		<% @sum += goal.amount %>
+	<% end %>
 
+	Total Goal amount : <strong>ZAR <%= @sum %></strong>
+</p>
 
+<h3> New Saving </h3>
+<%= render 'form' %><br>
 
+<p>	
+	<h2> Savings </h2><br>
 
+	<% @records.each do |record| %>
+		Saved: ZAR <%= record.amount %><br>
+		On: <%= record.date %><br><br>
+	<% end %>
+</p>
 
-<h1>  My Records FORM </h1>
