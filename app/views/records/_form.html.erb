@@ -18,7 +18,7 @@
 	</p>
 	<p>
 		<%= f.label :amount %>
-		<%= f.text_field :amount, placeholder: 'Amount saved' %>
+		<%= f.text_field :amount, data: {role: 'money', a_sep: '.', a_dec: ',' } %>
 	</p>
 	<p>
 		<%= f.label :description %>
