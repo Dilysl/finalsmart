@@ -10,14 +10,10 @@
 		Goal reached by : <%= goal.date %><br>
 		Goal amount : ZAR <%= goal.amount %><br>
 		Goal : <%= goal.description %><br>
-		<strong><%= link_to 'View this Goal', user_goal_path(current_user, goal) %></strong><br>
+		<strong><%= link_to 'View this Goal', user_goal_path(current_user, goal) %></strong><br><br>
 	<% end %>
 
-	<% @goals.each do |goal| %>
-		<% @sum += goal.amount %>
-	<% end %>
-
-	Total Goal amount : <strong>ZAR <%= @sum %></strong>
+	Total Goal amount : <strong>ZAR <%= @goals.sum(:amount) %></strong>
 </p>
 
 <h3> New Saving </h3>
@@ -27,8 +23,11 @@
 	<h2> Savings </h2><br>
 
 	<% @records.each do |record| %>
+		On: <%= record.date %><br>
 		Saved: ZAR <%= record.amount %><br>
-		On: <%= record.date %><br><br>
+		Description: <%= record.description %><br>
+		<strong><%= link_to 'View this Saving', user_record_path(current_user, record) %></strong><br><br>	
 	<% end %>
+	Total Savings amount : <strong>ZAR <%= @records.sum(:amount) %></strong>
 </p>
 

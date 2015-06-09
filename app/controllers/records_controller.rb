@@ -5,7 +5,7 @@ class RecordsController < ApplicationController
 		@records = current_user.records
 		@goals = current_user.goals
 		@sum = 0
-		@record = current_user.records.build
+		@record = Record.new
 	end
 
 	def show
