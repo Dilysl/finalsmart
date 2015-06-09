@@ -10,12 +10,12 @@
 		Goal: <%= goal.description %><br>
 		Goal reached by : <%= goal.date %><br>
 		Goal amount : ZAR <%= goal.amount %><br>
-		Goal completion: <%= @records.sum(:amount) / goal.amount * 100 %>  % <br>
+		Goal completion: <%= @records.sum(:amount).to_f / goal.amount * 100 %> % <br>
 		<strong><%= link_to 'View this Goal', user_goal_path(current_user, goal) %></strong><br><br>
 
 	<% end %>
 
-	Total Goal amount : <strong>ZAR <%= @goals.sum(:amount) %></strong>
+	Total Goal amount : <strong> <%= number_to_currency(@goals.sum(:amount), :unit => "ZAR ") %></strong>
 </p>
 
 <h3> New Saving </h3>
@@ -30,6 +30,7 @@
 		Description: <%= record.description %><br>
 		<strong><%= link_to 'View this Saving', user_record_path(current_user, record) %></strong><br><br>	
 	<% end %>
-	Total Savings amount : <strong>ZAR <%= @records.sum(:amount) %></strong>
+	Total Savings amount : <strong><%= number_to_currency(@total_record, :unit => "ZAR ")  %></strong>
+	
 </p>
 

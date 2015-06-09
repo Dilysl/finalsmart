@@ -6,6 +6,7 @@ class RecordsController < ApplicationController
 		@goals = current_user.goals
 		@sum = 0
 		@record = Record.new
+		@total_record = @records.sum(:amount)
 	end
 
 	def show
