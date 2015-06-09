@@ -15,15 +15,15 @@ class RecordsController < ApplicationController
 
 	def new
 		@user = current_user
-		@record = current_user.records.create
+		@record = current_user.records.build
 	end
 
 	def create
 		@user = current_user
-		@record = current_user.records.create(record_params)
-		@record.user_id = @user.id
-		if @record.save(record_params)
-			redirect_to user_record_path
+		@record = current_user.records.build(record_params)
+		
+		if @record.save
+			redirect_to user_record_path(@user, @record)
 		else
 			render :index
 		end
