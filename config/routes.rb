@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :records, :goals
     end
   
+  get '/info', to: 'info#index'
+  get '/info1', to: 'info1#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
