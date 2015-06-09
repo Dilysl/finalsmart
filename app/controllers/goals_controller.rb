@@ -29,7 +29,7 @@ class GoalsController < ApplicationController
 		@user = current_user
 		@goal = current_user.goals.find(params[:id])
 		if @goal.update(goal_params)
-			redirect_to user_goal_path
+			redirect_to user_records_path
 		else
 			render :edit
 		end

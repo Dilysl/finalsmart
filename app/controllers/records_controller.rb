@@ -36,9 +36,9 @@ class RecordsController < ApplicationController
 
 	def update
 		@user = current_user
-		@record = current_user.recordss.find(params[:id])
+		@record = current_user.records.find(params[:id])
 		if @record.update(record_params)
-			redirect_to user_record_path
+			redirect_to user_records_path
 		else
 			render :edit
 		end

@@ -2,15 +2,17 @@
 <h1> The personal savings page of <%= @user.email %> </h1>
 
 <button><%= link_to 'Home', :root %></button>
-<button><%= link_to 'New Goal', new_user_goal_path(current_user) %></button>
+<button><%= link_to 'New Goal', info_path(current_user) %></button>
 
 <p>
 	<h2> Goals </h2><br>
 	<% @goals.each do |goal| %>
+		Goal: <%= goal.description %><br>
 		Goal reached by : <%= goal.date %><br>
 		Goal amount : ZAR <%= goal.amount %><br>
-		Goal : <%= goal.description %><br>
+		Goal completion: <%= @records.sum(:amount) / goal.amount * 100 %>  % <br>
 		<strong><%= link_to 'View this Goal', user_goal_path(current_user, goal) %></strong><br><br>
+
 	<% end %>
 
 	Total Goal amount : <strong>ZAR <%= @goals.sum(:amount) %></strong>

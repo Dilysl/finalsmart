@@ -8,5 +8,10 @@ About this saving: <%= @record.description %><br>
 
 <%= link_to 'My page', user_records_path(current_user) %>
 
+<%= link_to 'Edit this Saving', edit_user_record_path(current_user, @record) %>
+<td><%= link_to 'Destroy', user_record_path(@user, @record),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td> 
+
 
 
