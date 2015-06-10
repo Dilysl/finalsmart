@@ -4,6 +4,10 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :profile_picture %><br />
+    <%= f.text_field :profile_picture, placeholder: 'your url here' %>
+  </div>
+  <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
   </div>
