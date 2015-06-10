@@ -3,6 +3,11 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+  <div class="field">
+    <%= f.label :profile_picture %><br />
+    <%= f.text_field :profile_picture, placeholder: 'your url here' %>
+  </div>
+
     <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>

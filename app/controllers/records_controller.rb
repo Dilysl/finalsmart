@@ -8,6 +8,7 @@ class RecordsController < ApplicationController
 		@record = Record.new
 		@total_record = @records.sum(:amount)
 		@rankings = User.best_savers
+		@profile_picture = @user.profile_picture
 	
 	end
 

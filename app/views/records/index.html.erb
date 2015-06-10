@@ -1,34 +1,44 @@
-<% @rankings.each do |user| %>
-<%= user.email %>
-<%= user.total_savings %>
-<%end %>
 
-<h1> The personal savings page of <%= @user.first_name %> </h1>
-
-<img src= <%= @user.profile_picture %> width=250;height=250/><br><br>
+<h1> <img src= <%= @profile_picture %> width=150;height=150/> The personal savings page of <%= @user.first_name %> </h1><br><br>
 
 <button><%= link_to 'Home', :root %></button>
 <button><%= link_to 'New Goal', info_path(current_user) %></button>
 
+<div class="top">
+	<h2> Top 5 savers: </h2>
+	<ul>
+		<% @rankings.each do |user| %>
+		<strong><%= user.first_name %></strong><br>
+		<img src= <%= user.profile_picture %> width=80;height=80/><br>
+		<%= number_to_currency(user.total_savings, :unit => "ZAR ") %><br><br>
+		<%end %>
+	</ul>
+</div>
+
 <p>
 	<h2> Goals </h2><br>
+
+	Total Goal amount : <strong> <%= number_to_currency(@goals.sum(:amount), :unit => "ZAR ") %></strong><br>
+
 	<% @goals.each do |goal| %>
 		Goal: <%= goal.description %><br>
 		Goal reached by : <%= goal.date %><br>
 		Goal amount : ZAR <%= goal.amount %><br>
 		Goal completion: <%= @records.sum(:amount).to_f / goal.amount * 100 %> % <br>
 		<strong><%= link_to 'View this Goal', user_goal_path(current_user, goal) %></strong><br><br>
-
 	<% end %>
 
-	Total Goal amount : <strong> <%= number_to_currency(@goals.sum(:amount), :unit => "ZAR ") %></strong>
 </p>
 
-<h3> New Saving </h3>
-<%= render 'form' %><br>
+<div class = "savingform">
+	<h3> New Saving </h3>
+	<%= render 'form' %><br>
+</div>
 
 <p>	
 	<h2> Savings </h2><br>
+
+	Total Savings amount : <strong><%= number_to_currency(@total_record, :unit => "ZAR ")  %></strong><br>
 
 	<% @records.each do |record| %>
 		On: <%= record.date %><br>
@@ -36,7 +46,7 @@
 		Description: <%= record.description %><br>
 		<strong><%= link_to 'View this Saving', user_record_path(current_user, record) %></strong><br><br>	
 	<% end %>
-	Total Savings amount : <strong><%= number_to_currency(@total_record, :unit => "ZAR ")  %></strong>
+	
 	
 </p>
 
