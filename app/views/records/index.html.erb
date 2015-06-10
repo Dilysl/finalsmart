@@ -1,5 +1,5 @@
 
-<h1> <img src= <%= @profile_picture %> width=150;height=150/> The personal savings page of <%= @user.first_name %> </h1><br><br>
+<h1> <img class="img-circle" src= <%= @profile_picture %> width=150;height=150/> The personal savings page of <%= @user.first_name %> </h1><br><br>
 
 <button><%= link_to 'Home', :root %></button>
 <button><%= link_to 'New Goal', info_path(current_user) %></button>
@@ -9,7 +9,7 @@
 	<ul>
 		<% @rankings.each do |user| %>
 		<strong><%= user.first_name %></strong><br>
-		<img src= <%= user.profile_picture %> width=120px;><br>
+		<img class="img-circle" src= <%= user.profile_picture %> width=120px;><br>
 		<%= number_to_currency(user.total_savings, :unit => "ZAR ") %><br><br>
 		<%end %>
 	</ul>

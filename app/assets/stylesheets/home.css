@@ -1,0 +1,16 @@
+.carousel-caption{
+position:absolute;
+vertical-align: middle;
+    top:0px;
+    left:20px;
+    color:#26cb96;
+    font-size:4em;
+}
+.header-content{
+	text-align:center;
+}
+
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}

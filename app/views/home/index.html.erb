@@ -1,29 +1,28 @@
-<div id="myCarousel" class="carousel slide">
-	<ul class="carousel-indicators">
-		<li data-target="#mycarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#mycarousel" data-slide-to="1"></li>
-		<li data-target="#mycarousel" data-slide-to="2"></li>
-	</ul>
-
+<div id="myCarousel" class="carousel slide" data-ride="carouse">
 	<div class="carousel-inner">
-		
 		<div class="item active">
 			<img src="http://i.imgur.com/43WZfW8.jpg?1" alt="tree" class="img-responsive">
 			<div class="carousel-caption">
-				<h3>Money Tree</h3>
+				<h2> Start Smart Saving Now! </h2>
 			</div>
 		</div>
-
 		<div class="item">
 			<img src="http://i.imgur.com/GQi5kxv.jpg?1" alt="pig" class="img-responsive">
 			<div class="carousel-caption">
-				<h3>Pig</h3>
+				<h3> This is what all of our users saved up to now!!<strong> <%= number_to_currency(@records.sum(:amount), :unit => "ZAR ")  %></strong></h3> 
 			</div>
 		</div>
 		<div class="item">
-			<img src="http://i.imgur.com/ypJv12N.jpg?1" alt="student" class="img-responsive">
+			<img src="http://i.imgur.com/EeYIoXO.jpg?1" alt="student" class="img-responsive">
 			<div class="carousel-caption">
-				<h3>Student</h3>
+				<h3>Sign up now to keep track of your savings!</h3><br>
+				<%= link_to('Sign Up', new_user_registration_path, :class => 'btn btn-md btn-primary') %>
+			</div>
+		</div>
+		<div class="item">
+			<img src="http://www.infinitaccounting.com/wp-content/uploads/2014/07/mortgage.jpg" alt="pig" class="img-responsive">
+			<div class="carousel-caption">
+				<h3> Set a goal for your savings!</h3> 
 			</div>
 		</div>
 	</div>
@@ -35,15 +34,38 @@
 	<a class="carousel-control right" href="#myCarousel" data-slide="next">
 	<span class="icon-next"></span>
 	</a>
-
+</div>
+<div class="header-content">
+<h1> Smart Saver </h1><br><br>
 </div>
 
-<h2> Start Smart Saving Now! </h2>
-<h3> This is what all of our users saved up to now!!<strong> <%= number_to_currency(@records.sum(:amount), :unit => "ZAR ")  %></strong></h3> 
+ <div class="container-marketing">
 
-<h3> Sign up now to keep track of your savings! </h3>
-<h3> Set a goal for your savings! </h3><br>
-</div>
+      <!-- Three columns of text below the carousel -->
+      <div class="row vertical-center-row">
+        <div class="col-md-4">
+          <img class="img-circle" src="http://i.imgur.com/oDYctK2.jpg?1" alt="Enrique" width="160" height="160">
+          <div class="stories">
+	          <h2>Enrique</h2>
+	          <p>As a 20 year old student I use Smart Saver to help me keep track of my savings and it helps me keep motivated to save more. Last month I saved enough money to go on a trip with my friends to Cape Town and I didn't have to worry about my money at all because I made sure I saved enough for this trip. </p>
+	      </div>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-md-4">
+          <img class="img-circle" src="https://d3n8a8pro7vhmx.cloudfront.net/bmecommunity/pages/344/attachments/original/1412347357/LaDamien_Myers-496x416.jpg?1412347357" alt="John" width="160" height="160">
+          <div class="stories">
+          	  <h2>John</h2>
+	          <p>With a family to take care of I realized how important it is to start saving. I never use to save a lot of money before and did't really know how. With Smart Saver I started saving for my son's studies and my retirement. I like to get into the top 5 savers soon! </p>
+          </div>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-md-4">
+          <img class="img-circle" src="http://www.kaspi.ca/data/photos/136_1r20130120103202.jpg" alt="Generic placeholder image" width="160" height="160">
+          <div class="stories">
+	          <h2>Susan</h2>
+	          <p>Smart Saver helped me to learn more about savings and loans. I used to have debts because I would get loans without knowing when and how much I would have to pay back. As a single mother I am now saving for my daughter's wedding and het studies. </p>
+	       </div>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
