@@ -9,7 +9,7 @@
 	<ul>
 		<% @rankings.each do |user| %>
 		<strong><%= user.first_name %></strong><br>
-		<img src= <%= user.profile_picture %> width=80;height=80/><br>
+		<img src= <%= user.profile_picture %> width=120px;><br>
 		<%= number_to_currency(user.total_savings, :unit => "ZAR ") %><br><br>
 		<%end %>
 	</ul>
