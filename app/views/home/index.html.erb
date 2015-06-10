@@ -1,11 +1,16 @@
 
 <h2> Start Smart Saving Now! </h2>
-<h3> This is what all of our users saved up to now!! <strong> <%= number_to_currency(@records.sum (:amount), unit: "ZAR ") %></strong></h3>
+<h3> This is what all of our users saved up to now!!<strong> <%= number_to_currency(@records.sum (:amount), unit: 'ZAR ')  %></strong></h3> 
+
+<h3> Sign up now to keep track of your savings! </h3>
+<h3> Set a goal for your savings! </h3><br>
+
 
 
 <h4> Current Top Savers: </h4>
 
-User: <%= @top.user.email %>
-
+<% @top.each do |top| %>
+	<p> <%= top.user.email %></p>
+<% end %>
 
 

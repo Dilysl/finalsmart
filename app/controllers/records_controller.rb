@@ -7,6 +7,8 @@ class RecordsController < ApplicationController
 		@sum = 0
 		@record = Record.new
 		@total_record = @records.sum(:amount)
+		@rankings = User.best_savers
+	
 	end
 
 	def show

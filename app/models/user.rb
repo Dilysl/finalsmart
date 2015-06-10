@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def self.best_savers(limit = 5)
+  	joins(:records).select('*, sum(records.amount) as total_savings').group('users.id').order('total_savings desc').take(limit)
+  end
 end

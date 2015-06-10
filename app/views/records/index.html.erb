@@ -1,3 +1,7 @@
+<% @rankings.each do |user| %>
+<%= user.email %>
+<%= user.total_savings %>
+<%end %>
 
 <h1> The personal savings page of <%= @user.email %> </h1>
 
