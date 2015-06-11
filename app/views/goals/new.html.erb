@@ -1,6 +1,3 @@
-<h1> Create your new Goal! </h1>
-<%= render 'form' %>
-
 <div class="examplegoals">
 	<h1> Example Goals </h1>
 
@@ -20,3 +17,24 @@
 	<strong> College/Education </strong><br>
 	<img src="http://bestclipartblog.com/clipart-pics/college-clip-art-4.jpg"width=250;height=250/><br>
 </div>
+<div class="jumbotron">
+      <div class="container">
+      	<div class="col-md-9"> 
+        <h1>Almost there!</h1>
+       <p>Please take a moment to review the sample goals to the right. Then fill out the form below to create your first savings goal.</p>
+      </div><br><br>
+      <%= link_to 'Savings Information >>', info_index_path, class: 'btn btn-primary btn-lg' %>
+      <%= link_to 'Credit and Loan Information >>', info1_path, class: 'btn btn-primary btn-lg' %><br><br>
+      		<div class="col-md-8">
+      			<div class="tronstyle"> 
+    Create Your New Goal:<br><br>
+      <%= render 'form' %>
+      </div>
+      	</div>
+      		</div>
+      			</div>
+</div>
+
+
+
+

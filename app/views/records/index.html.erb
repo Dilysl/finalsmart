@@ -1,11 +1,9 @@
+<div class="container">
 
-<h1> <img src= <%= @profile_picture %> width=150;height=150/> The personal savings page of <%= @user.first_name %> </h1><br><br>
-
-<button><%= link_to 'Home', :root %></button>
-<button><%= link_to 'New Goal', info_path(current_user) %></button>
+        <div class="row">
 
 <div class="top">
-	<h2> Top 5 savers: </h2>
+	<h2> Top 5 Savers: </h2>
 	<ul>
 		<% @rankings.each do |user| %>
 		<strong><%= user.first_name %></strong><br>
@@ -13,6 +11,19 @@
 		<%= number_to_currency(user.total_savings, :unit => "ZAR ") %><br><br>
 		<%end %>
 	</ul>
+</div>
+<head>
+<link rel="stylesheet" type="text/css" href='record.css'>
+</head>
+
+	
+	<div class = "ProfileTitle">
+	<%= @user.first_name %>'s Savings Records and Goals Page <br><br>
+	</div><img class= "profilepicture"src= <%= @profile_picture %> width=225;height=225;><br>
+	
+
+
+<div class='GoalTitle'> <%= link_to 'Click Here to Create a New Goal >>', info_path(current_user), class: 'btn btn-primary btn-lg' %>
 </div>
 
 <p>
@@ -31,7 +42,7 @@
 </p>
 
 <div class = "savingform">
-	<h3> New Saving </h3>
+	<h3> Create a New Savings Record </h3>
 	<%= render 'form' %><br>
 </div>
 

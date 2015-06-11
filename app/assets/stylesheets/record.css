@@ -1,0 +1,39 @@
+img {
+	border: 2px double black;
+}
+.profilepicture {
+	border: 5px solid black;
+	border-padding-right: 50px;
+}
+
+.top {
+  	float:right;
+  }
+.savingform {
+  	float:right;
+}
+
+.ProfileTitle {
+	font-size: 35px;
+	font-weight: bold;
+	text-indent: 110px
+}
+
+.GoalTitle {
+	text-align: center
+}
+
+.NewGoalButton {
+	text-align: center;
+}
+
+.tronstyle {
+	font-size: 34px;
+	font-weight: bold;
+}
+.jumbotron {
+	font-size: 60px;
+}
+
+
+}
