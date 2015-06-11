@@ -2,32 +2,20 @@
 <html>
 <head>
   <title>Smartsaver</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  
-  <style>
-
-  .examplegoals {
-  	float:right;
-  }
-  .progress {
-    width:250px;
-  }
-
-
-  </style>
-
-<%= csrf_meta_tags %>
 </head>
 <body>
-
-
 <%= render 'layouts/nav' %>
 <br><br>
 
 <%= yield %>
 
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+<%= csrf_meta_tags %>
 </body>
 
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+
 </html>
