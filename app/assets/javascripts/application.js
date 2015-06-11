@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require retina
+//= require jquery.easing.1.3
+//= require smoothscroll
+//= require jquery-func
 //= require turbolinks
 //= require_tree .
-= require jquery
-= require autoNumeric
-= require_tree .
