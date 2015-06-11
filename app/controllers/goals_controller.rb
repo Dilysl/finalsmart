@@ -38,7 +38,6 @@ class GoalsController < ApplicationController
 	def destroy
 		@user = current_user
 		@goal = @user.goals.find(params[:id])
-
 		@goal.destroy
 		redirect_to user_records_path
 	end

@@ -1,3 +1,4 @@
+<div class="border-form-div">
 <%= form_for [current_user, @record] do |f| %> 
 
 <% if @record.errors.any? %>
@@ -25,7 +26,7 @@
 		<%= f.text_area :description %>
 	</p>
 	<p>
-		<%= f.submit %>
+		<%= f.submit "Create", :class => 'btn btn-primary' %>
 	</p>
-
 <% end %>
+</div>
