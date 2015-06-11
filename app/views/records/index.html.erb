@@ -18,13 +18,18 @@
 <p>
 	<h2> Goals </h2><br>
 
-	Total Goal amount : <strong> <%= number_to_currency(@goals.sum(:amount), :unit => "ZAR ") %></strong><br>
+	Total Goal amount : <strong> <%= number_to_currency(@total_goal, :unit => "ZAR ") %></strong><br>
 
 	<% @goals.each do |goal| %>
 		Goal: <%= goal.description %><br>
 		Goal reached by : <%= goal.date %><br>
 		Goal amount : ZAR <%= goal.amount %><br>
-		Goal completion: <%= @records.sum(:amount).to_f / goal.amount * 100 %> % <br>
+		Goal completion: 
+		<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="<%= goal_completion(@records.sum(:amount), goal.amount) %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= goal_completion(@records.sum(:amount), goal.amount) %>%;">
+    <%= goal_completion(@records.sum(:amount), goal.amount) %>%
+  </div>
+</div>
 		<strong><%= link_to 'View this Goal', user_goal_path(current_user, goal) %></strong><br><br>
 	<% end %>
 
