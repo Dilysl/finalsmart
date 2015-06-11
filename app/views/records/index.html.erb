@@ -1,68 +1,68 @@
-
-<div class="container">
-
-        <div class="row">
-
-<div class="top">
-	<h2> Top 5 Savers: </h2>
-	<ul>
-		<% @rankings.each do |user| %>
-		<strong><%= user.first_name %></strong><br>
-		<img class="img-circle" src= <%= user.profile_picture %> width=120px;><br>
-		<%= number_to_currency(user.total_savings, :unit => "ZAR ") %><br><br>
-		<%end %>
-	</ul>
-</div>
 <head>
 <link rel="stylesheet" type="text/css" href='record.css'>
 </head>
 
+<div class="container">
 	
 	<div class = "ProfileTitle"><img class = "profilepicture">
 	<h1> <img class="img-circle" src= <%= @profile_picture %> width=150;height=150/> The personal savings page of <%= @user.first_name %> </h1><br></h1></div>
 	
-
-
 <div class='GoalTitle'> <%= link_to 'Click Here to Create a New Goal >>', info_path(current_user), class: 'btn btn-primary btn-lg' %>
 </div>
-
-<p>
-	<h2> Goals </h2><br>
-
-	Total Goal amount : <strong> <%= number_to_currency(@total_goal, :unit => "ZAR ") %></strong><br>
-
-	<% @goals.each do |goal| %>
-		Goal: <%= goal.description %><br>
-		Goal reached by : <%= goal.date %><br>
-		Goal amount : ZAR <%= goal.amount %><br>
-		Goal completion: 
-		<div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="<%= goal_completion(@records.sum(:amount), goal.amount) %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= goal_completion(@records.sum(:amount), goal.amount) %>%;">
-    <%= goal_completion(@records.sum(:amount), goal.amount) %>%
-  </div>
-</div>
+<div class="row vertical-center-row">
+    <div class="col-md-12">
+		<p>
+		<h2> Goals </h2><br>
+		Total Goal amount : <strong> <%= number_to_currency(@total_goal, :unit => "ZAR ") %></strong><br>
+		<% @goals.each do |goal| %>
+			Goal: <%= goal.description %><br>
+			Goal reached by : <%= goal.date %><br>
+			Goal amount : ZAR <%= goal.amount %><br>
+			Goal completion: 
+			<div class="progress">
+			  <div class="progress-bar" role="progressbar" aria-valuenow="<%= goal_completion(@records.sum(:amount), goal.amount) %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= goal_completion(@records.sum(:amount), goal.amount) %>%;">
+				    <%= goal_completion(@records.sum(:amount), goal.amount) %>%
+	 		 </div>
+		</div>
 		<strong><%= link_to 'View this Goal', user_goal_path(current_user, goal) %></strong><br><br>
-	<% end %>
-
-</p>
-
-<div class = "savingform">
-	<h3> Create a New Savings Record </h3>
-	<%= render 'form' %><br>
+		<% end %>
+		</p>
+	</div>
 </div>
-
-<p>	
-	<h2> Savings </h2><br>
-
-	Total Savings amount : <strong><%= number_to_currency(@total_record, :unit => "ZAR ")  %></strong><br>
-
-	<% @records.each do |record| %>
-		On: <%= record.date %><br>
-		Saved: ZAR <%= record.amount %><br>
-		Description: <%= record.description %><br>
-		<strong><%= link_to 'View this Saving', user_record_path(current_user, record) %></strong><br><br>	
-	<% end %>
-	
-	
-</p>
+<div class="row vertical-center-row">
+    <div class="col-md-12">
+		<p>	
+		<h2> Savings </h2><br>
+		Total Savings amount : <strong><%= number_to_currency(@total_record, :unit => "ZAR ")  %></strong><br>
+		<% @records.each do |record| %>
+			On: <%= record.date %><br>
+			Saved: ZAR <%= record.amount %><br>
+			Description: <%= record.description %><br>
+			<strong><%= link_to 'View this Saving', user_record_path(current_user, record) %></strong><br><br>	
+		<% end %>
+		</p>
+	</div>
+</div>
+<div class="row vertical-center-row">
+    <div class="col-md-12">
+		<div class = "savingform">
+			<h3> Create a New Savings Record </h3>
+			<%= render 'form' %><br>
+		</div>
+	</div>
+</div>
+<div class="row vertical-center-row">
+    <div class="col-md-12">
+    	<div class="top">
+			<h2> Top 5 Savers: </h2>
+			<ul>
+				<% @rankings.each do |user| %>
+				<strong><%= user.first_name %></strong><br>
+				<img class="img-circle" src= <%= user.profile_picture %> width=120px;><br>
+				<%= number_to_currency(user.total_savings, :unit => "ZAR ") %><br><br>
+				<%end %>
+			</ul>
+		</div>
+	</div>
+</div>
 
