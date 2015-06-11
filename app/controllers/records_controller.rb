@@ -2,11 +2,12 @@ class RecordsController < ApplicationController
 
 	def index
 		@user = current_user
-		@records = current_user.records
-		@goals = current_user.goals
+		@records = @user.records
+		@goals = @user.goals
 		@sum = 0
 		@record = Record.new
 		@total_record = @records.sum(:amount)
+		@total_goal = @goals.sum(:amount)
 		@rankings = User.best_savers
 		@profile_picture = @user.profile_picture
 	
@@ -60,4 +61,5 @@ class RecordsController < ApplicationController
 	def record_params
 		params.require(:record).permit(:date, :amount, :description)
 	end
+
 end

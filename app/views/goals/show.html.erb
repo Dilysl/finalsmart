@@ -1,7 +1,7 @@
 <h1> Your Goal </h1>
 
 <p>
-I am saving: <%= @goal.amount %><br>
+I am saving: <%= number_to_currency(@goal.amount, unit: "ZAR ") %><br>
 I am saving for: <%= @goal.description %><br>
 To be reached by: <%= @goal.date %><br>
 </p>

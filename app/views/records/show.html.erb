@@ -1,7 +1,7 @@
 <h1> Your Saving </h1>
 
 <p>
-I saved: <%= @record.amount %><br>
+I saved: <%= number_to_currency(@record.amount, unit: "ZAR ") %><br>
 On: <%= @record.date %><br>
 About this saving: <%= @record.description %><br>
 </p>
@@ -12,6 +12,5 @@ About this saving: <%= @record.description %><br>
 <td><%= link_to 'Destroy', user_record_path(@user, @record),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td> 
-
 
 

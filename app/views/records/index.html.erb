@@ -7,7 +7,7 @@
 	<ul>
 		<% @rankings.each do |user| %>
 		<strong><%= user.first_name %></strong><br>
-		<img src= <%= user.profile_picture %> width=120px;><br>
+		<img class="img-circle" src= <%= user.profile_picture %> width=120px;><br>
 		<%= number_to_currency(user.total_savings, :unit => "ZAR ") %><br><br>
 		<%end %>
 	</ul>
@@ -17,9 +17,8 @@
 </head>
 
 	
-	<div class = "ProfileTitle">
-	<%= @user.first_name %>'s Savings Records and Goals Page <br><br>
-	</div><img class= "profilepicture"src= <%= @profile_picture %> width=225;height=225;><br>
+	<div class = "ProfileTitle"><img class = "profilepicture">
+	<h1> <img class="img-circle" src= <%= @profile_picture %> width=150;height=150/> The personal savings page of <%= @user.first_name %> </h1><br></h1></div>
 	
 
 
@@ -29,13 +28,18 @@
 <p>
 	<h2> Goals </h2><br>
 
-	Total Goal amount : <strong> <%= number_to_currency(@goals.sum(:amount), :unit => "ZAR ") %></strong><br>
+	Total Goal amount : <strong> <%= number_to_currency(@total_goal, :unit => "ZAR ") %></strong><br>
 
 	<% @goals.each do |goal| %>
 		Goal: <%= goal.description %><br>
 		Goal reached by : <%= goal.date %><br>
 		Goal amount : ZAR <%= goal.amount %><br>
-		Goal completion: <%= @records.sum(:amount).to_f / goal.amount * 100 %> % <br>
+		Goal completion: 
+		<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="<%= goal_completion(@records.sum(:amount), goal.amount) %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= goal_completion(@records.sum(:amount), goal.amount) %>%;">
+    <%= goal_completion(@records.sum(:amount), goal.amount) %>%
+  </div>
+</div>
 		<strong><%= link_to 'View this Goal', user_goal_path(current_user, goal) %></strong><br><br>
 	<% end %>
 
