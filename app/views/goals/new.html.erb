@@ -1,40 +1,40 @@
-<div class="examplegoals">
-	<h1> Example Goals </h1>
-
-	<strong> New House </strong><br>
-	<img src="http://www.trafalgarproperty.net/wp-content/uploads/2013/01/Cartoon-house1.jpg" width=250;height=250/><br>
-
-	<strong> New Car </strong><br>
-	<img src="http://www.clipartbest.com/cliparts/niE/XAa/niEXAaXiA.jpeg"width=250;height=250/><br>
-
-	<strong> Vacation/Trip </strong><br>
-	<img src="http://ak.picdn.net/shutterstock/videos/4001560/preview/stock-footage-cruise-ship-cartoons.jpg"width=250;height=250/><br>
-
-	<strong> Retirement </strong><br>
-	<img src="http://cliparts.co/cliparts/riL/oKG/riLoKGEaT.jpg"width=250;height=250/><br>
-
-
-	<strong> College/Education </strong><br>
-	<img src="http://bestclipartblog.com/clipart-pics/college-clip-art-4.jpg"width=250;height=250/><br>
-</div>
-<div class="jumbotron">
-      <div class="container">
-      	<div class="col-md-9"> 
-        <h1>Almost there!</h1>
-       <p>Please take a moment to review the sample goals to the right. Then fill out the form below to create your first savings goal.</p>
-      </div><br><br>
-      <%= link_to 'Savings Information >>', info_index_path, class: 'btn btn-primary btn-lg' %>
-      <%= link_to 'Credit and Loan Information >>', info1_path, class: 'btn btn-primary btn-lg' %><br><br>
-      		<div class="col-md-8">
-      			<div class="tronstyle"> 
-    Create Your New Goal:<br><br>
-      <%= render 'form' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+      <h1>Almost there!</h1>
+      <p>Please take a moment to review the sample goals to the right. Then fill out the form below to create your first savings goal.</p>
+      <%= link_to 'Savings Information >>', '/#Savings', class: 'btn btn-primary btn-lg' %>
+      <%= link_to 'Credit and Loan Information >>', '/#Credit', class: 'btn btn-primary btn-lg' %>
       </div>
-      	</div>
-      		</div>
-      			</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Create Your New Goal:</h2>
+      <%= render 'form' %>
+    </div>
+
+    <div class="col-md-3">
+    <div class="examplegoals">
+    <strong> New House </strong><br>
+  <img src="http://www.trafalgarproperty.net/wp-content/uploads/2013/01/Cartoon-house1.jpg" width=250;height=250/><br>
+
+  <strong> New Car </strong><br>
+  <img src="http://www.clipartbest.com/cliparts/niE/XAa/niEXAaXiA.jpeg"width=250;height=250/><br>
+    </div>
+    </div>
+
+    <div class="col-md-3">
+    <div class="examplegoals">
+    <strong> College/Education </strong><br>
+  <img src="http://bestclipartblog.com/clipart-pics/college-clip-art-4.jpg"width=250;height=250/><br>
+  <strong> Retirement </strong><br>
+  <img src="http://cliparts.co/cliparts/riL/oKG/riLoKGEaT.jpg"width=250;height=250/>
+    </div>
+    </div>
 </div>
-
-
+</div>
 
 
