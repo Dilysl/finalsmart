@@ -1,5 +1,4 @@
 
-}
 .profilepicture {
 	border: 5px solid black;
 	border-padding-right: 50px;
@@ -8,6 +7,7 @@
 .top {
   	float:right;
   }
+  
 .savingform {
   	float:right;
 }
@@ -32,7 +32,4 @@
 }
 .jumbotron {
 	font-size: 60px;
-}
-
-
 }
