@@ -27,6 +27,8 @@ gem 'twitter-bootstrap-rails'
 
 gem 'font-awesome-rails'
 
+gem 'puma'
+
 group :production do
   gem "pg"
   gem 'rails_12factor'
