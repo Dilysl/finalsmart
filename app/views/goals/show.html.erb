@@ -1,15 +1,27 @@
-<h1> Your Goal </h1>
 
-<p>
-I am saving: <%= number_to_currency(@goal.amount, unit: "ZAR ") %><br>
-I am saving for: <%= @goal.description %><br>
-To be reached by: <%= @goal.date %><br>
-</p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="jumbotron">
+    			<h1> Your Goal: </h1>
+				<h3>Goal Amount:</h3> 
+				<h4><%= number_to_currency(@goal.amount, unit: "ZAR ") %></h4>
+				<h3>Date:</h3> <h4><%= @goal.date %></h4>
+				<h3>Description:</h3> <p><%= @goal.description %></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class= "container">
+	<div class="row">
+		<div class="col-md-8">
+		<%= link_to 'Edit this Goal', edit_user_goal_path(current_user, @goal), class: 'btn btn-primary btn-lg' %>
+		<td><%= link_to 'Destroy', user_goal_path(@user, @goal),
+		              method: :delete, class: 'btn btn-primary btn-lg' %></td> 
+		</div>
+	</div>
+</div>
 
-<%= link_to 'Edit this Goal', edit_user_goal_path(current_user, @goal) %>
-<%= link_to 'My page', user_records_path(current_user) %>
-<td><%= button_to 'Destroy', user_goal_path(@user, @goal),
-              method: :delete %></td> 
 
 
 

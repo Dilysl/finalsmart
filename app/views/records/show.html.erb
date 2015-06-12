@@ -1,16 +1,30 @@
-<h1> Your Saving </h1>
+<div class="container">
+     <div class="row">
+     	<div class="col-md-8">
+    		<div class="jumbotron">
+				 
+				<h1> Your Saving: </h1>
 
-<p>
-I saved: <%= number_to_currency(@record.amount, unit: "ZAR ") %><br>
-On: <%= @record.date %><br>
-About this saving: <%= @record.description %><br>
-</p>
+				<h3>Amount:</h3>
+				<h2><%= number_to_currency(@record.amount, unit: "ZAR ") %></h2>
+				<h3>Date:</h3> <h4><%= @record.date %></h4>
 
-<%= link_to 'My page', user_records_path(current_user) %>
+				<h3>Description:</h3> <p><%= @record.description %></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class= "container">
+<div class="row">
+<div class="col-md-8">
 
-<%= link_to 'Edit this Saving', edit_user_record_path(current_user, @record) %>
+<%= link_to 'Edit this Saving', edit_user_record_path(current_user, @record), class: 'btn btn-primary btn-lg' %>
 <td><%= link_to 'Destroy', user_record_path(@user, @record),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td> 
+              method: :delete, class: 'btn btn-primary btn-lg' %></td> 
+
+</div>
+	</div>
+</div>
+
 
 
