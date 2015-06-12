@@ -17,6 +17,5 @@
 //= require modernizr.custom
 //= require jquery.easing.1.3
 //= require smoothscroll
-//= require jquery-func
 //= require turbolinks
 //= require_tree .
