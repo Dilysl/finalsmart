@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def self.best_savers(limit = 5)
-  	joins(:records).select('user.*, sum(records.amount) as total_savings').group('users.id').order('total_savings desc').take(limit)
+  	joins(:records).select('users.*, sum(records.amount) as total_savings').group('users.id').order('total_savings desc').take(limit)
   end
 end
